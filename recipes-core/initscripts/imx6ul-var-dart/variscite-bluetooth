@@ -36,6 +36,10 @@ brcm_patchram_plus --patchram /lib/firmware/bcm/bcm43430a1.hcd  --enable_hci --b
 sleep 2
 #
 hciconfig hci0 up
+sleep 1
+hciconfig hci0 sspmode 0
+set-bt-name.py
+simple-agent &
 #
 exit 0
 
